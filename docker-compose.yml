@@ -39,6 +39,3 @@ services:
     restart: always
     volumes:
       - ./wordpress:/var/www/html
-
-volumes:
-  mysql:
