@@ -1,9 +1,13 @@
-# Docker-Compose and WordPress with php.ini file.
+# Docker-Compose y WordPress con php.ini.
 
-This is a refactored docker-compose file following the structure of the official exampele from [https://docs.docker.com/compose/wordpress/](https://docs.docker.com/compose/wordpress/).
+Instrucciones:
 
-It addresses the issue of how to **increase the upload limit** and how to change `php.ini` variables within the container. See [https://github.com/docker-library/wordpress/issues/10](https://github.com/docker-library/wordpress/issues/10).
+1. Instalar Docker
+2. Crear archivo .env (ver .env-sample)
+3. Adaptar wordpress-docker/php.ini si es necesario
+4. Iniciar el contenedor usando `docker-compose up -d`. Demora un par de minutos en descargar las dependencias (solo la primera vez)
+5. Ir a localhost:8080 en el navegador y acceder a la página de instalación de wordpress
+6. Ir a localhost:9090 para acceder a phpmyAdmin
 
-1. Create and configure a `.env` file. (See `.env-example` for an example)
-2. Adapt the `wordpress-docker/php.ini` file to your liking.
-3. Start the container by running `docker-compose up -d --build`. You should now be able to bring up wordpress by browsing to `localhost:8080`
+Para tumbar el contenedor pero mantener la data en la base de datos:
+`docker-compose down`
